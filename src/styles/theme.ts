@@ -48,6 +48,13 @@ export const theme = {
       font-style: normal;
       line-height: 135%; /* 24.3px */
     `,
+    subtitle3: css`
+      font-weight: 600;
+      font-size: 1.5rem;
+      font-family: "Pretendard Variable", sans-serif;
+      font-style: normal;
+      line-height: 135%; /* 24.3px */
+    `,
     body1: css`
       font-weight: 500;
       font-size: 1.6rem;
@@ -68,6 +75,13 @@ export const theme = {
       font-family: "Pretendard Variable", sans-serif;
       font-style: normal;
       line-height: 140%; /* 22.4px */
+    `,
+    body4: css`
+      font-weight: 400;
+      font-size: 1.3rem;
+      font-family: "Pretendard Variable", sans-serif;
+      font-style: normal;
+      line-height: 150%;
     `,
   },
 };
