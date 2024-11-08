@@ -13,13 +13,14 @@ import {
   signupInputStyle,
   signupPageStyle,
 } from "./Signup.style";
+import { axiosInstance } from "../../apis/axios";
 
 function Signup() {
   const [username, setUsername] = useState("");
   const [userid, setUserid] = useState("");
   const [password, setPassword] = useState("");
   const [passwordcheck, setPasswordcheck] = useState("");
-  
+
   const navigate = useNavigate();
 
   const handleSubmit = async (event: React.FormEvent) => {
@@ -30,7 +31,25 @@ function Signup() {
       return;
     }
 
-    navigate("/question");
+    try {
+      const response = await axiosInstance.post("/auth/join", {
+        body: JSON.stringify({
+          userid,
+          username,
+          password,
+        }),
+      });
+
+      if (response) {
+        alert("회원가입이 완료되었습니다!");
+        navigate("/question"); // 회원가입 성공 시 페이지 이동
+      } else {
+        alert("회원가입에 실패했습니다. 다시 시도해주세요.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("회원가입 중 오류가 발생했습니다.");
+    }
   };
 
   return (

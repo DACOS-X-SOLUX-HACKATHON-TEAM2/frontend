@@ -15,15 +15,38 @@ import {
   recommendationParagraph,
   recommendationTextStyle,
 } from "./Login.style";
+import { axiosInstance } from "../../apis/axios";
 
 function Login() {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const navigate = useNavigate();
 
+  const loginUser = async (email: string, password: string) => {
+    try {
+      const response = await axiosInstance.post("/auth/login", {
+        email,
+        password,
+      });
+
+      if (response.status === 200) {
+        localStorage.setItem("accessToken", response.data.accessToken);
+        localStorage.setItem("refreshToken", response.data.refreshToken);
+
+        navigate("/main");
+      } else {
+        alert(response.data.message);
+      }
+    } catch (error) {
+      console.error("로그인 요청 중 오류 발생", error);
+      alert("로그인에 실패했습니다. 다시 시도해주세요.");
+    }
+  };
+
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    navigate("/main");
+
+    await loginUser(username, password);
   };
 
   const goToSignup = () => {
