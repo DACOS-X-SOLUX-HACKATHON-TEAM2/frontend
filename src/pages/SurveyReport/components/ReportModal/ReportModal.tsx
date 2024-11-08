@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
 
-import { REPORT } from "../../constants/dummy";
+import { REPORT } from "../../constants/report";
 import { getSkinType } from "../../utils/type";
 import {
   bgStyle,

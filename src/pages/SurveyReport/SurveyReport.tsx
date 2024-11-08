@@ -5,7 +5,7 @@ import Button from "../../components/Button/Button";
 import ReportBox from "./components/ReportBox/ReportBox";
 import ReportModal from "./components/ReportModal/ReportModal";
 
-import { TYPE } from "./constants/dummy";
+import { TYPE } from "./constants/report";
 import {
   pageStyle,
   reportSectionStyle,
