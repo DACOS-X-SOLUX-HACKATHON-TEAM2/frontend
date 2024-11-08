@@ -4,8 +4,10 @@ import { faHeart as faRegularHeart } from "@fortawesome/free-regular-svg-icons";
 import { faHeart as faSolidHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 import Button from "../../../../components/Button/Button";
 import theme from "../../../../styles/theme";
+import { postLike } from "../../apis/postLike";
 import {
   cardStyle,
   descriptionStyle,
@@ -14,14 +16,22 @@ import {
 } from "./ProductCard.style";
 
 interface ProductCardProps {
+  id: number;
   image: string;
   name: string;
   link: string;
   description: string;
 }
 
-const ProductCard = ({ image, name, link, description }: ProductCardProps) => {
+const ProductCard = ({
+  id,
+  image,
+  name,
+  link,
+  description,
+}: ProductCardProps) => {
   const [isLike, setIsLike] = useState(false);
+  const userId = useParams();
 
   const handleLink = () => {
     window.open(link, "_blank");
@@ -29,6 +39,7 @@ const ProductCard = ({ image, name, link, description }: ProductCardProps) => {
 
   const handleLike = () => {
     setIsLike(!isLike);
+    postLike(id, +userId);
   };
 
   return (

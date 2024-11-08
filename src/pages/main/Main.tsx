@@ -21,7 +21,7 @@ const Main = () => {
   const currentCategories =
     type === 0 || type === 1 ? CATEGORIES : OILY_CATEGORIES;
 
-  const filteredItems = PRODUCTS.filter((item) => item.category === category);
+  const filteredItems = PRODUCTS.filter((item) => item.routine === category);
 
   return (
     <div css={pageStyle}>
@@ -45,10 +45,11 @@ const Main = () => {
       <div css={productLayout}>
         {filteredItems.map((product) => (
           <ProductCard
-            key={product.productName}
-            image={product.productImage}
-            link={product.productLink}
-            name={product.productName}
+            key={product.cosmetics_id}
+            id={product.cosmetics_id}
+            image={product.img}
+            link={""}
+            name={product.name}
             description={product.description}
           />
         ))}
