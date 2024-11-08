@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import LikeProductCard from "../../components/LikeProductCard/LikeProductCard";
 import theme from "../../styles/theme";
@@ -11,12 +11,15 @@ import {
   headerStyle,
   pageContainer,
 } from "./MyPage.style";
+import { logout } from "./apis/logout";
 
 const MyPage = () => {
   const navigate = useNavigate();
+  const id = useParams();
 
-  const handleLogoutClick = () => {
+  const handleLogoutClick = (id: number) => {
     navigate("/");
+    logout(id);
   };
 
   const handleMainClick = () => {
@@ -52,7 +55,7 @@ const MyPage = () => {
           <Button variant="secondary" onClick={handleMainClick}>
             메인화면
           </Button>
-          <Button variant="secondary" onClick={handleLogoutClick}>
+          <Button variant="secondary" onClick={() => handleLogoutClick(+id)}>
             로그아웃
           </Button>
         </div>
