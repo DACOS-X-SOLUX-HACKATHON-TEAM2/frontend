@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
-import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { axiosInstance } from "../../apis/axios";
 import {
   q,
   qAppContainer,
@@ -11,22 +11,23 @@ import {
 } from "./Question.style";
 
 const Q4: React.FC = () => {
-  const [selectedTopic] = useState<{
-    num: string;
-    path: string;
-    name: string;
-  } | null>(null);
-
   const navigate = useNavigate();
 
-  const handleTopicClick = (topicPath: string) => {
-    navigate(topicPath);
-  };
+  const handleTopicClick = async (topic: { num: string; path: string }) => {
+    try {
+      await axiosInstance.post("/survey", {
+        surveyAnswer: topic.num,
+      });
 
+      navigate(topic.path);
+    } catch (error) {
+      console.error("POST 요청 실패:", error);
+    }
+  };
   const topics = [
-    { num: "1", path: "/question/5", name: "눈가 주름이 꽤 있는 편이다." },
-    { num: "2", path: "/question/5", name: "보통이다." },
-    { num: "3", path: "/question/5", name: "눈가 주름이 별로 없다." },
+    { num: "0", path: "/question/5", name: "눈가 주름이 꽤 있는 편이다." },
+    { num: "1", path: "/question/5", name: "보통이다." },
+    { num: "2", path: "/question/5", name: "눈가 주름이 별로 없다." },
   ];
 
   return (
@@ -38,10 +39,7 @@ const Q4: React.FC = () => {
           {topics.map((topic) => (
             <button
               key={topic.num}
-              className={`qTopicButton ${
-                selectedTopic?.num === topic.num ? "selected" : ""
-              }`}
-              onClick={() => handleTopicClick(topic.path)}
+              onClick={() => handleTopicClick(topic)}
               css={qTopicButton}
             >
               <span>{topic.name}</span>
