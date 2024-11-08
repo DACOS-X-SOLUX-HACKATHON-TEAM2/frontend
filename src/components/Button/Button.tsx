@@ -4,7 +4,7 @@ import React, { HTMLAttributes } from "react";
 import { buttonStyle, variantStyle } from "./Button.style";
 
 export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
-  variant: "primary" | "secondary";
+  variant?: "primary" | "secondary";
 }
 
 const Button = ({ variant = "primary", children, ...props }: ButtonProps) => {
