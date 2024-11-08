@@ -6,9 +6,7 @@ export const entireHeaderStyle = css({
 
   top: "1rem",
 
-  width: "100%",
-
-  padding: "1rem",
+  width: "100vw",
 
   justifyContent: "space-between",
   alignItems: "center",
@@ -55,34 +53,3 @@ export const typeStyle = css({
 export const titleStyle = css({
   ...theme.fonts.title1,
 });
-
-export const categoryLayoutStyle = css({
-  display: "flex",
-
-  top: "20rem",
-
-  width: "100%",
-  gap: "16rem",
-
-  justifyContent: "center",
-  alignItems: "center",
-
-  marginBottom: "2rem",
-
-  backgroundColor: theme.colors.bgGreen,
-});
-
-export const buttonStyle = (isClicked: boolean) =>
-  css({
-    width: "20rem",
-
-    backgroundColor: isClicked ? theme.colors.lightGreen : "white",
-
-    border: isClicked
-      ? `1px solid ${theme.colors.lightGreen}`
-      : `1px solid ${theme.colors.gray}`,
-
-    "&:hover": {
-      backgroundColor: theme.colors.lightGreen,
-    },
-  });

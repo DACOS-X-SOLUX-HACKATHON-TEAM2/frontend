@@ -19,6 +19,14 @@ export const cardStyle = css({
 
   backgroundColor: theme.colors.lightGreen,
 
+  cursor: "pointer",
+
+  "&:hover": {
+    transform: "translateY(-10px)",
+
+    transition: "0.3s ease-in-out",
+  },
+
   "& h3": {
     alignSelf: "baseline",
   },
