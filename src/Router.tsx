@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Login from "./pages/login/Login";
+import Main from "./pages/main/Main";
 import Q1 from "./pages/question/Question1";
 import Q10 from "./pages/question/Question10";
 import Q11 from "./pages/question/Question11";
@@ -35,6 +36,7 @@ const AppRouter = () => {
         <Route path="/Q11" element={<Q11 />} />
         <Route path="/Q12" element={<Q12 />} />
         <Route path="/report" element={<SurveyReport />} />
+        <Route path="/main" element={<Main />} />
       </Routes>
     </Router>
   );

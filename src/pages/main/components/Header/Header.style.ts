@@ -1,0 +1,88 @@
+import { css } from "@emotion/react";
+import theme from "../../../../styles/theme";
+
+export const entireHeaderStyle = css({
+  display: "flex",
+
+  top: "1rem",
+
+  width: "100%",
+
+  padding: "1rem",
+
+  justifyContent: "space-between",
+  alignItems: "center",
+
+  backgroundColor: theme.colors.bgGreen,
+});
+
+export const headerStyle = css({
+  position: "fixed",
+  display: "flex",
+
+  top: "1rem",
+
+  width: "100%",
+
+  padding: "1rem",
+
+  justifyContent: "space-between",
+  alignItems: "center",
+
+  backgroundColor: theme.colors.bgGreen,
+});
+
+export const titleLayoutStyle = css({
+  display: "flex",
+
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+
+  marginLeft: `calc(100vw - 61%)`,
+
+  gap: "2rem",
+
+  "& > h2": {
+    color: theme.colors.mainGreen,
+  },
+});
+
+export const typeStyle = css({
+  ...theme.fonts.title3,
+});
+
+export const titleStyle = css({
+  ...theme.fonts.title1,
+});
+
+export const categoryLayoutStyle = css({
+  display: "flex",
+
+  top: "20rem",
+
+  width: "100%",
+  gap: "16rem",
+
+  justifyContent: "center",
+  alignItems: "center",
+
+  marginBottom: "2rem",
+
+  backgroundColor: theme.colors.bgGreen,
+});
+
+export const buttonStyle = (isClicked: boolean) =>
+  css({
+    width: "20rem",
+
+    backgroundColor: isClicked ? theme.colors.lightGreen : "white",
+
+    border: isClicked
+      ? `1px solid ${theme.colors.lightGreen}`
+      : `1px solid ${theme.colors.gray}`,
+
+    "&:hover": {
+      backgroundColor: theme.colors.lightGreen,
+    },
+  });

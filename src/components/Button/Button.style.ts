@@ -15,6 +15,8 @@ export const buttonStyle = css({
   borderRadius: "8px",
 
   cursor: "pointer",
+
+  transition: "0.2s ease-in-out",
 });
 
 export const variantStyle = (variant: Required<ButtonProps>["variant"]) => {
@@ -24,14 +26,12 @@ export const variantStyle = (variant: Required<ButtonProps>["variant"]) => {
       backgroundColor: theme.colors.middleGreen,
       "&:hover": {
         backgroundColor: theme.colors.mainGreen,
-
-        transition: "0.2s ease-in-out",
       },
     }),
     secondary: css({
       border: `1px solid ${theme.colors.gray}`,
 
-      color: theme.colors.gray,
+      color: theme.colors.black,
       backgroundColor: theme.colors.white,
 
       "&:hover": {

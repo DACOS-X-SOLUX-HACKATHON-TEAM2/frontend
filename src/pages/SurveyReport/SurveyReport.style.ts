@@ -10,9 +10,11 @@ export const pageStyle = css({
 
   height: "100dvh",
 
-  gap: "14rem",
-
   backgroundColor: theme.colors.bgGreen,
+
+  "& header": {
+    marginBottom: "15rem",
+  },
 });
 
 export const textLayoutStyle = css({
