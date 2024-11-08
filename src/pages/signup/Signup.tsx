@@ -29,7 +29,7 @@ function Signup() {
       return;
     }
 
-    navigate("/question");
+    navigate("/Q1");
   };
 
   return (
