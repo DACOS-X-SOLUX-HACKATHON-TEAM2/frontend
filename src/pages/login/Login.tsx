@@ -26,7 +26,7 @@ function Login() {
   };
 
   const goToSignup = () => {
-    navigate("/signup");
+    navigate("/Signup");
   };
 
   return (
