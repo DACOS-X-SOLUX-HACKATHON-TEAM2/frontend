@@ -63,7 +63,7 @@ function Login() {
               로그인
             </Button>
           </div>
-          <div css={loginTextStyle}>
+          <span css={loginTextStyle}>
             아직 회원이 아니신가요?
             <p
               css={{ color: theme.colors.mainGreen, cursor: "pointer" }}
@@ -71,7 +71,7 @@ function Login() {
             >
               회원가입
             </p>
-          </div>
+          </span>
         </form>
       </div>
     </div>

@@ -1,5 +1,4 @@
 import { css } from "@emotion/react";
-import { theme } from "./../../styles/theme";
 
 export const bodyStyle = css`
   background-color: #f2f1eb;
@@ -21,8 +20,6 @@ export const loginPageStyle = css`
 `;
 
 export const recommendationTextStyle = css`
-  display: flex;
-  flex-direction: column;
   position: absolute;
   top: -130px;
   left: 50%;
@@ -73,12 +70,6 @@ export const loginInputStyle = css`
   margin-bottom: 20px;
   border: 1px solid #f2f1eb;
   box-sizing: border-box;
-
-  outline: none;
-
-  &:focus {
-    border: 1px solid ${theme.colors.middleGreen};
-  }
 `;
 
 export const buttonStyle = css`
@@ -99,7 +90,8 @@ export const loginButtonStyle = css`
 
 export const loginTextStyle = css`
   display: flex;
-  text-align: center;
+  align-items: center;
+  justify-content: center;
   gap: 1rem;
   font-size: 14px;
   margin-top: 15px;

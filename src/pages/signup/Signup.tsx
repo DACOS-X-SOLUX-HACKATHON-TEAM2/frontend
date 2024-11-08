@@ -15,10 +15,10 @@ import {
 } from "./Signup.style";
 
 function Signup() {
-  const [username, setUsername] = useState<string>("");
-  const [userid, setUserid] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [passwordcheck, setPasswordcheck] = useState<string>("");
+  const [username, setUsername] = useState("");
+  const [userid, setUserid] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordcheck, setPasswordcheck] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (event: React.FormEvent) => {
@@ -29,7 +29,7 @@ function Signup() {
       return;
     }
 
-    navigate("/Q1");
+    navigate("/question");
   };
 
   return (
