@@ -10,7 +10,7 @@ export const bodyStyle = css`
   align-items: center;
 `;
 
-export const loginPageStyle = css`
+export const signupPageStyle = css`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,7 +22,7 @@ export const loginPageStyle = css`
 
 export const recommendationTextStyle = css`
   position: absolute;
-  top: -130px;
+  top: -100px;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -36,13 +36,7 @@ export const recommendationHeading = css`
   margin-bottom: 10px;
 `;
 
-export const recommendationParagraph = css`
-  font-size: 16px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-`;
-
-export const loginFormStyle = css`
+export const signupFormStyle = css`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,9 +45,10 @@ export const loginFormStyle = css`
   border-radius: 10px;
   box-sizing: border-box;
   z-index: 0;
+  padding-bottom: 20px;
 `;
 
-export const loginContainerStyle = css`
+export const signupContainerStyle = css`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -61,7 +56,7 @@ export const loginContainerStyle = css`
   padding-top: 50px;
 `;
 
-export const loginInputStyle = css`
+export const signupInputStyle = css`
   width: 55%;
   height: 45px;
   background-color: white;
@@ -84,25 +79,17 @@ export const buttonStyle = css`
   margin-bottom: 15px;
 `;
 
-export const loginButtonStyle = css`
+export const signupButtonStyle = css`
   ${buttonStyle};
   width: 35%;
 `;
 
-export const loginTextStyle = css`
-  text-align: center;
-  font-size: 14px;
-  margin-top: 15px;
-  padding-bottom: 40px;
-
-  .signup-link {
-    color: #4caf50;
-    cursor: pointer;
-    font-weight: 600;
-    text-decoration: underline;
-
-    &:hover {
-      color: #388e3c;
-    }
-  }
+export const labelStyle = css`
+  width: 55%;
+  text-align: left;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  margin-left: 10px;
+  color: #333;
 `;

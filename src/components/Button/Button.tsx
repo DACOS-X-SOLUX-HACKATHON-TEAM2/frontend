@@ -5,6 +5,7 @@ import { buttonStyle, variantStyle } from "./Button.style";
 
 export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary";
+  type?: "button" | "submit" | "reset";
 }
 
 const Button = ({ variant = "primary", children, ...props }: ButtonProps) => {
