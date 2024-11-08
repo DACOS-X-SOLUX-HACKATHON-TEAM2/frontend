@@ -39,7 +39,7 @@ export const theme = {
       font-size: 1.8rem;
       font-family: "Pretendard Variable", sans-serif;
       font-style: normal;
-      line-height: 200%; /* 36px */
+      line-height: 100%; /* 36px */
     `,
     subtitle2: css`
       font-weight: 600;
