@@ -1,5 +1,4 @@
 import { theme } from "./../../styles/theme";
-/** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
 export const pageContainer = css`

@@ -47,7 +47,7 @@ const MyPage = () => {
   return (
     <div css={pageContainer}>
       <header css={headerStyle}>
-        <h1 css={{ ...theme.fonts.subtitle2 }}>좋아요 목록</h1>
+        <h1 css={theme.fonts.subtitle3}>찜한 목록</h1>
         <div css={buttonWrapper}>
           <Button variant="secondary" onClick={handleMainClick}>
             메인화면

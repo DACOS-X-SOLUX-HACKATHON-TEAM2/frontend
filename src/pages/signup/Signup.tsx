@@ -19,6 +19,7 @@ function Signup() {
   const [userid, setUserid] = useState("");
   const [password, setPassword] = useState("");
   const [passwordcheck, setPasswordcheck] = useState("");
+  
   const navigate = useNavigate();
 
   const handleSubmit = async (event: React.FormEvent) => {
@@ -46,7 +47,7 @@ function Signup() {
             <input
               type="text"
               id="1"
-              placeholder="주민등록상 실명 입력"
+              placeholder="이름(별명) 입력"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
