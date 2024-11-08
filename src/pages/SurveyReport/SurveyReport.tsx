@@ -5,6 +5,7 @@ import Button from "../../components/Button/Button";
 import ReportBox from "./components/ReportBox/ReportBox";
 import ReportModal from "./components/ReportModal/ReportModal";
 
+import theme from "../../styles/theme";
 import { TYPE } from "./constants/report";
 import {
   pageStyle,
@@ -49,7 +50,12 @@ const SurveyReport = () => {
             onClick={() => handleOpenModal("care")}
           />
         </section>
-        <Button variant="primary">
+        <Button
+          variant="primary"
+          css={{
+            ...theme.fonts.subtitle3,
+          }}
+        >
           피부 타입에 맞는 추천 화장품 보러 가기 &gt;
         </Button>
       </main>
