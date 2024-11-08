@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Button from "../../components/Button/Button";
+import theme from "../../styles/theme";
 import { pageStyle } from "../SurveyReport/SurveyReport.style";
 import { TYPE } from "../SurveyReport/constants/report";
 import { buttonStyle, categoryLayoutStyle, productLayout } from "./Main.style";
@@ -30,8 +31,11 @@ const Main = () => {
           <Button
             key={categoryName}
             variant="secondary"
-            onClick={() => setCategory(index)}
-            css={[buttonStyle(index === category), { width: "20rem" }]}
+            onClick={() => {
+              setCategory(index);
+              console.log(index === category);
+            }}
+            css={[buttonStyle(index === category), { ...theme.fonts.body1 }]}
           >
             {categoryName}
           </Button>

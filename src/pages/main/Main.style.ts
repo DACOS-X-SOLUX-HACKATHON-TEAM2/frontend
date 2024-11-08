@@ -13,11 +13,12 @@ export const productLayout = css({
 
   gridTemplateColumns: "1fr 1fr 1fr 1fr",
   justifyContent: "center",
+  placeItems: "center",
 
   width: "100%",
   height: "100dvh",
 
-  padding: "3rem 5rem",
+  padding: "3rem 15rem",
   gap: "3rem",
 
   overflowY: "scroll",
@@ -44,13 +45,12 @@ export const categoryLayoutStyle = css({
 
 export const buttonStyle = (isClicked: boolean) =>
   css({
+    width: "20rem",
     backgroundColor: isClicked ? theme.colors.lightGreen : "white",
 
     border: isClicked
       ? `1px solid ${theme.colors.lightGreen}`
       : `1px solid ${theme.colors.gray}`,
-
-    ...theme.fonts.body1,
 
     "&:hover": {
       backgroundColor: theme.colors.lightGreen,
