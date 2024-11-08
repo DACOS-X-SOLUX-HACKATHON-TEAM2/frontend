@@ -5,6 +5,7 @@ import Button from "../../components/Button/Button";
 import ReportBox from "./components/ReportBox/ReportBox";
 import ReportModal from "./components/ReportModal/ReportModal";
 
+import { useNavigate } from "react-router-dom";
 import theme from "../../styles/theme";
 import { TYPE } from "./constants/report";
 import {
@@ -23,6 +24,7 @@ const SurveyReport = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalType, setModalType] = useState<Modal>("feature");
+  const navigate = useNavigate();
 
   const handleOpenModal = (type: Modal) => {
     setModalType(type);
@@ -55,6 +57,7 @@ const SurveyReport = () => {
           css={{
             ...theme.fonts.subtitle3,
           }}
+          onClick={() => navigate("/main")}
         >
           피부 타입에 맞는 추천 화장품 보러 가기 &gt;
         </Button>

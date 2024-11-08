@@ -8,6 +8,10 @@ export const pageStyle = css({
   justifyContent: "center",
   alignItems: "center",
 
+  height: "100dvh",
+
+  gap: "10rem",
+
   backgroundColor: theme.colors.bgGreen,
 
   "& header": {

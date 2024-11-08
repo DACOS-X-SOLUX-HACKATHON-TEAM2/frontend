@@ -2,17 +2,18 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
+import theme from "../../styles/theme";
 import {
   bodyStyle,
+  loginButtonStyle,
+  loginContainerStyle,
+  loginFormStyle,
+  loginInputStyle,
   loginPageStyle,
-  recommendationTextStyle,
+  loginTextStyle,
   recommendationHeading,
   recommendationParagraph,
-  loginFormStyle,
-  loginContainerStyle,
-  loginInputStyle,
-  loginButtonStyle,
-  loginTextStyle,
+  recommendationTextStyle,
 } from "./Login.style";
 
 function Login() {
@@ -30,7 +31,7 @@ function Login() {
   };
 
   return (
-    <div css={bodyStyle}>
+    <form css={bodyStyle} onSubmit={handleSubmit}>
       <div css={loginPageStyle}>
         <div css={recommendationTextStyle}>
           <h1 css={recommendationHeading}>SkinLAB</h1>
@@ -61,16 +62,17 @@ function Login() {
             </Button>
           </div>
           <div css={loginTextStyle}>
-            <p>
-              아직 회원이 아니신가요?{" "}
-              <span onClick={goToSignup} className="signup-link">
-                회원가입
-              </span>
+            아직 회원이 아니신가요?
+            <p
+              css={{ color: theme.colors.mainGreen, cursor: "pointer" }}
+              onClick={goToSignup}
+            >
+              회원가입
             </p>
           </div>
         </form>
       </div>
-    </div>
+    </form>
   );
 }
 
