@@ -1,5 +1,48 @@
+import { theme } from "./../../styles/theme";
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+
+export const pageStyle = css`
+  display: flex;
+
+  width: 100vw;
+  height: 100dvh;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 2rem;
+
+  background-color: ${theme.colors.bgGreen};
+`;
+
+export const layoutStyle = css`
+  display: flex;
+
+  width: 50rem;
+  height: 40rem;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: ${theme.colors.lightGray};
+
+  border-radius: 0.8rem;
+`;
+
+export const skipButtonStyle = css`
+  margin-top: 3rem;
+  border: none;
+
+  background-color: ${theme.colors.lightGray};
+
+  ${theme.fonts.body4}
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
 
 export const qAppContainer = css`
   display: flex;
@@ -34,7 +77,10 @@ export const qTopicButton = css`
   justify-content: center;
 
   &:hover {
-    background-color: #c4d7b2;
+    background-color: ${theme.colors.middleGreen};
+    border: 1px solid #000000;
+
+    transition: 0.2s ease-in-out;
   }
 `;
 

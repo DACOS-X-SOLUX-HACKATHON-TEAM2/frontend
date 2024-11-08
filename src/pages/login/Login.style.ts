@@ -21,6 +21,8 @@ export const loginPageStyle = css`
 `;
 
 export const recommendationTextStyle = css`
+  display: flex;
+  flex-direction: column;
   position: absolute;
   top: -130px;
   left: 50%;
