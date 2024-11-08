@@ -1,7 +1,8 @@
 import { css } from "@emotion/react";
-import theme from "../../../../styles/theme";
+import { theme } from "./../../../../styles/theme";
 
 export const cardStyle = css({
+  position: "relative",
   display: "flex",
 
   flexDirection: "column",
@@ -25,6 +26,13 @@ export const cardStyle = css({
     transform: "translateY(-10px)",
 
     transition: "0.3s ease-in-out",
+
+    "& .description": {
+      opacity: 0.8,
+      pointerEvents: "auto",
+
+      borderRadius: "0.8rem",
+    },
   },
 
   "& h3": {
@@ -47,4 +55,33 @@ export const titleStyle = css({
   display: "flex",
 
   ...theme.fonts.subtitle1,
+});
+
+export const descriptionStyle = css({
+  position: "absolute",
+  display: "flex",
+
+  top: "0",
+  left: "0",
+
+  width: "100%",
+  height: "69%",
+
+  backgroundColor: "rgba(0, 0, 0, 0.7)",
+
+  color: theme.colors.white,
+
+  opacity: "0",
+  transition: "opacity 0.3s",
+
+  padding: "3rem",
+  fontSize: "1.4rem",
+  lineHeight: "2.5rem",
+
+  alignItems: "center",
+  justifyContent: "center",
+
+  pointerEvents: "none",
+
+  zIndex: 4,
 });

@@ -38,7 +38,7 @@ const Main = () => {
             image={product.productImage}
             link={product.productLink}
             name={product.productName}
-            category={product.category}
+            description={product.description}
           />
         ))}
       </div>

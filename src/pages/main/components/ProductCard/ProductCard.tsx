@@ -6,16 +6,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import Button from "../../../../components/Button/Button";
 import theme from "../../../../styles/theme";
-import { cardStyle, imagestyle, titleStyle } from "./ProductCard.style";
+import {
+  cardStyle,
+  descriptionStyle,
+  imagestyle,
+  titleStyle,
+} from "./ProductCard.style";
 
 interface ProductCardProps {
   image: string;
   name: string;
   link: string;
-  category: number;
+  description: string;
 }
 
-const ProductCard = ({ image, name, link, category }: ProductCardProps) => {
+const ProductCard = ({ image, name, link, description }: ProductCardProps) => {
   const [isLike, setIsLike] = useState(false);
 
   const handleLink = () => {
@@ -42,6 +47,9 @@ const ProductCard = ({ image, name, link, category }: ProductCardProps) => {
       <Button variant="primary" css={{ width: "100%" }} onClick={handleLink}>
         올리브영에서 확인하기 &gt;
       </Button>
+      <div css={descriptionStyle} className="description">
+        {description}
+      </div>
     </article>
   );
 };
