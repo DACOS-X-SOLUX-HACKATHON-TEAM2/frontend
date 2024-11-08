@@ -24,7 +24,7 @@ export const buttonWrapper = css`
   position: absolute;
   right: 2rem;
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
 `;
 
 export const bodyStyle = css`

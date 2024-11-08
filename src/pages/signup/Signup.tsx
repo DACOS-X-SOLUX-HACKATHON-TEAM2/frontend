@@ -43,7 +43,7 @@ function Signup() {
             <label css={labelStyle}>이름</label>
             <input
               type="text"
-              placeholder="주민등록상 실명 입력"
+              placeholder="이름(별명) 입력"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
