@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import theme from "../../styles/theme";
 
 export const bodyStyle = css`
   background-color: #f2f1eb;
@@ -66,6 +67,11 @@ export const signupInputStyle = css`
   margin-bottom: 20px;
   border: 1px solid #f2f1eb;
   box-sizing: border-box;
+  outline: none;
+
+  &:focus {
+    border: 1px solid ${theme.colors.middleGreen};
+  }
 `;
 
 export const buttonStyle = css`

@@ -31,7 +31,7 @@ function Login() {
   };
 
   return (
-    <form css={bodyStyle} onSubmit={handleSubmit}>
+    <div css={bodyStyle}>
       <div css={loginPageStyle}>
         <div css={recommendationTextStyle}>
           <h1 css={recommendationHeading}>SkinLAB</h1>
@@ -48,6 +48,7 @@ function Login() {
               onChange={(e) => setUsername(e.target.value)}
               required
               css={loginInputStyle}
+              tabIndex={0}
             />
             <input
               type="password"
@@ -56,6 +57,7 @@ function Login() {
               onChange={(e) => setPassword(e.target.value)}
               required
               css={loginInputStyle}
+              tabIndex={0}
             />
             <Button variant="primary" css={loginButtonStyle}>
               로그인
@@ -72,7 +74,7 @@ function Login() {
           </div>
         </form>
       </div>
-    </form>
+    </div>
   );
 }
 
