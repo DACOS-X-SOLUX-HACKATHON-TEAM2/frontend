@@ -2,6 +2,8 @@ import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Login from "./pages/login/Login";
 import Main from "./pages/main/Main";
+import MyPage from "./pages/mypage/MyPage";
+import Question from "./pages/question/Question";
 import Q1 from "./pages/question/Question1";
 import Q10 from "./pages/question/Question10";
 import Q11 from "./pages/question/Question11";
@@ -16,29 +18,29 @@ import Q8 from "./pages/question/Question8";
 import Q9 from "./pages/question/Question9";
 import Signup from "./pages/signup/Signup";
 import SurveyReport from "./pages/SurveyReport/SurveyReport";
-import MyPage from "./pages/mypage/MyPage";
 
 const AppRouter = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/Signup" element={<Signup />} />
-        <Route path="/Q1" element={<Q1 />} />
-        <Route path="/Q2" element={<Q2 />} />
-        <Route path="/Q3" element={<Q3 />} />
-        <Route path="/Q4" element={<Q4 />} />
-        <Route path="/Q5" element={<Q5 />} />
-        <Route path="/Q6" element={<Q6 />} />
-        <Route path="/Q7" element={<Q7 />} />
-        <Route path="/Q8" element={<Q8 />} />
-        <Route path="/Q9" element={<Q9 />} />
-        <Route path="/Q10" element={<Q10 />} />
-        <Route path="/Q11" element={<Q11 />} />
-        <Route path="/Q12" element={<Q12 />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/question" element={<Question />} />
+        <Route path="/question/1" element={<Q1 />} />
+        <Route path="/question/2" element={<Q2 />} />
+        <Route path="/question/3" element={<Q3 />} />
+        <Route path="/question/4" element={<Q4 />} />
+        <Route path="/question/5" element={<Q5 />} />
+        <Route path="/question/6" element={<Q6 />} />
+        <Route path="/question/7" element={<Q7 />} />
+        <Route path="/question/8" element={<Q8 />} />
+        <Route path="/question/9" element={<Q9 />} />
+        <Route path="/question/10" element={<Q10 />} />
+        <Route path="/question/11" element={<Q11 />} />
+        <Route path="/question/12" element={<Q12 />} />
         <Route path="/report" element={<SurveyReport />} />
         <Route path="/main" element={<Main />} />
-        <Route path="/MyPage" element={<MyPage />} />
+        <Route path="/myPage" element={<MyPage />} />
       </Routes>
     </Router>
   );

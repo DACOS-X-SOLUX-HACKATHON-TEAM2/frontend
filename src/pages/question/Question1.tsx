@@ -2,12 +2,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
+  q,
   qAppContainer,
+  qButtonGrid,
   qContent,
   qQuestion,
-  qButtonGrid,
   qTopicButton,
-  q,
 } from "./Question.style";
 
 const Q1: React.FC = () => {
@@ -24,11 +24,11 @@ const Q1: React.FC = () => {
   };
 
   const topics = [
-    { num: "1", path: "/Q2", name: "10대" },
-    { num: "2", path: "/Q2", name: "20대" },
-    { num: "3", path: "/Q2", name: "30대" },
-    { num: "4", path: "/Q2", name: "40대" },
-    { num: "5", path: "/Q2", name: "50대 이상" },
+    { num: "1", path: "/question/2", name: "10대" },
+    { num: "2", path: "/question/2", name: "20대" },
+    { num: "3", path: "/question/2", name: "30대" },
+    { num: "4", path: "/question/2", name: "40대" },
+    { num: "5", path: "/question/2", name: "50대 이상" },
   ];
 
   return (

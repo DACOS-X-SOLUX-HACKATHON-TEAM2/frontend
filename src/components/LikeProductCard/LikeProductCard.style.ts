@@ -1,3 +1,4 @@
+import { theme } from "./../../styles/theme";
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
@@ -17,8 +18,11 @@ export const imageWrapper = css`
 `;
 
 export const imageStyle = css`
-  width: 220px;
-  height: 220px;
+  width: 22rem;
+  height: 22rem;
+
+  border-radius: 0.8rem;
+
   object-fit: cover;
 `;
 
@@ -35,14 +39,30 @@ export const titleStyle = css`
   height: 44px;
   font-size: 28px;
   margin-bottom: 8px;
+
+  ${theme.fonts.subtitle4}
 `;
 
-export const subtitleStyle = css`
-  width: 595px;
-  height: 44px;
-  font-size: 22px;
-  font-weight: 500;
+export const buttonStyle = css`
+  width: 20rem;
+  height: 4rem;
+
+  background-color: ${theme.colors.bgGreen};
+
+  ${theme.fonts.body1}
+
+  border: none;
+  border-radius: 0.8rem;
+
+  padding: 1rem;
+
   cursor: pointer;
+
+  &:hover {
+    background-color: ${theme.colors.lightGreen};
+
+    transition: 0.2s ease-in-out;
+  }
 `;
 
 export const heartStyle = css`
@@ -57,7 +77,7 @@ export const heartStyle = css`
 
 export const heartButtonStyle = css`
   color: #f00;
-  font-size: 48px;
+  font-size: 4rem;
   background: none;
   border: none;
   cursor: pointer;

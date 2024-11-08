@@ -26,8 +26,12 @@ const Header = () => {
           <h1 css={titleStyle}>추천 피부 관리 루틴</h1>
         </div>
         <div css={{ display: "flex", gap: "2rem" }}>
-          <Button variant="secondary" css={{ height: "4rem" }}>
-            마이페이지
+          <Button
+            variant="secondary"
+            css={{ height: "4rem" }}
+            onClick={() => navigate("/myPage")}
+          >
+            찜한 목록
           </Button>
           <Button
             variant="secondary"

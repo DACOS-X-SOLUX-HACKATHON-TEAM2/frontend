@@ -90,7 +90,8 @@ export const loginButtonStyle = css`
 
 export const loginTextStyle = css`
   display: flex;
-  text-align: center;
+  align-items: center;
+  justify-content: center;
   gap: 1rem;
   font-size: 14px;
   margin-top: 15px;

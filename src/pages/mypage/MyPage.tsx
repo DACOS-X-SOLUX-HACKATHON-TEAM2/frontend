@@ -1,15 +1,15 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import theme from "../../styles/theme";
 import Button from "../../components/Button/Button";
 import LikeProductCard from "../../components/LikeProductCard/LikeProductCard";
+import theme from "../../styles/theme";
 
 import {
-  pageContainer,
-  headerStyle,
-  buttonWrapper,
   bodyStyle,
+  buttonWrapper,
+  headerStyle,
+  pageContainer,
 } from "./MyPage.style";
 
 const MyPage = () => {

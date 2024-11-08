@@ -27,11 +27,11 @@ function Login() {
   };
 
   const goToSignup = () => {
-    navigate("/Signup");
+    navigate("/signup");
   };
 
   return (
-    <form css={bodyStyle} onSubmit={handleSubmit}>
+    <div css={bodyStyle}>
       <div css={loginPageStyle}>
         <div css={recommendationTextStyle}>
           <h1 css={recommendationHeading}>SkinLAB</h1>
@@ -48,6 +48,7 @@ function Login() {
               onChange={(e) => setUsername(e.target.value)}
               required
               css={loginInputStyle}
+              tabIndex={0}
             />
             <input
               type="password"
@@ -56,12 +57,13 @@ function Login() {
               onChange={(e) => setPassword(e.target.value)}
               required
               css={loginInputStyle}
+              tabIndex={0}
             />
             <Button variant="primary" css={loginButtonStyle}>
               로그인
             </Button>
           </div>
-          <div css={loginTextStyle}>
+          <span css={loginTextStyle}>
             아직 회원이 아니신가요?
             <p
               css={{ color: theme.colors.mainGreen, cursor: "pointer" }}
@@ -69,10 +71,10 @@ function Login() {
             >
               회원가입
             </p>
-          </div>
+          </span>
         </form>
       </div>
-    </form>
+    </div>
   );
 }
 

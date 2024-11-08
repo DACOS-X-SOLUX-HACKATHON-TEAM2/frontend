@@ -2,12 +2,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
+  q,
   qAppContainer,
+  qButtonGrid,
   qContent,
   qQuestion,
-  qButtonGrid,
   qTopicButton,
-  q,
 } from "./Question.style";
 
 const Q12: React.FC = () => {
