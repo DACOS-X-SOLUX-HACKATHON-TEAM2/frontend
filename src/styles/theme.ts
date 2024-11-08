@@ -2,6 +2,10 @@ import { css } from "@emotion/react";
 
 export const theme = {
   colors: {
+    mainGreen: "#A0C49D",
+    middleGreen: "#C4D7B2",
+    lightGreen: "#E1ECC8",
+    bgGreen: "#F2F1EB",
     black: "#010101",
     white: "#FFF",
   },
