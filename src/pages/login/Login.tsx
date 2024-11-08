@@ -12,7 +12,7 @@ import {
   loginContainerStyle,
   loginInputStyle,
   loginButtonStyle,
-  signupTextStyle,
+  loginTextStyle,
 } from "./Login.style";
 
 function Login() {
@@ -60,7 +60,7 @@ function Login() {
               로그인
             </Button>
           </div>
-          <div css={signupTextStyle}>
+          <div css={loginTextStyle}>
             <p>
               아직 회원이 아니신가요?{" "}
               <span onClick={goToSignup} className="signup-link">
