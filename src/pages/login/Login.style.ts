@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
 export const bodyStyle = css`
@@ -58,12 +57,12 @@ export const loginContainerStyle = css`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 50px;
+  padding: 7rem;
 `;
 
 export const loginInputStyle = css`
-  width: 55%;
-  height: 45px;
+  width: 39rem;
+  height: 4rem;
   background-color: white;
   border-radius: 8px;
   padding-left: 10px;
@@ -90,7 +89,9 @@ export const loginButtonStyle = css`
 `;
 
 export const loginTextStyle = css`
+  display: flex;
   text-align: center;
+  gap: 1rem;
   font-size: 14px;
   margin-top: 15px;
   padding-bottom: 40px;
