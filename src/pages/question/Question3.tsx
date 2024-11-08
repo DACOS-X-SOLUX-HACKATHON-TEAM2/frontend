@@ -24,9 +24,8 @@ const Q3: React.FC = () => {
   };
 
   const topics = [
-    { num: "1", path: "/Q4", name: "많이 민감하다." },
-    { num: "2", path: "/Q4", name: "보통이다." },
-    { num: "3", path: "/Q4", name: "별로 민감하지 않다." },
+    { num: "1", path: "/Q4", name: "민감한 편이다." },
+    { num: "2", path: "/Q4", name: "민감하지 않다." },
   ];
 
   return (

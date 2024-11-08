@@ -16,6 +16,7 @@ import Q8 from "./pages/question/Question8";
 import Q9 from "./pages/question/Question9";
 import Signup from "./pages/signup/Signup";
 import SurveyReport from "./pages/SurveyReport/SurveyReport";
+import MyPage from "./pages/mypage/MyPage";
 
 const AppRouter = () => {
   return (
@@ -37,6 +38,7 @@ const AppRouter = () => {
         <Route path="/Q12" element={<Q12 />} />
         <Route path="/report" element={<SurveyReport />} />
         <Route path="/main" element={<Main />} />
+        <Route path="/MyPage" element={<MyPage />} />
       </Routes>
     </Router>
   );
