@@ -9,20 +9,17 @@ import theme from "../../../../styles/theme";
 import { cardStyle, imagestyle, titleStyle } from "./ProductCard.style";
 
 interface ProductCardProps {
-  productImage: string;
-  productName: string;
-  productLink: string;
+  image: string;
+  name: string;
+  link: string;
+  category: number;
 }
 
-const ProductCard = ({
-  productImage,
-  productName,
-  productLink,
-}: ProductCardProps) => {
+const ProductCard = ({ image, name, link, category }: ProductCardProps) => {
   const [isLike, setIsLike] = useState(false);
 
   const handleLink = () => {
-    window.open(productLink, "_blank");
+    window.open(link, "_blank");
   };
 
   const handleLike = () => {
@@ -31,9 +28,9 @@ const ProductCard = ({
 
   return (
     <article css={cardStyle}>
-      <img src={productImage} css={imagestyle} />
+      <img src={image} css={imagestyle} />
       <div css={{ display: "flex", gap: "1rem" }}>
-        <h3 css={titleStyle}>{productName}</h3>
+        <h3 css={titleStyle}>{name}</h3>
         <FontAwesomeIcon
           icon={isLike ? faSolidHeart : faRegularHeart}
           color={isLike ? theme.colors.red : theme.colors.black}

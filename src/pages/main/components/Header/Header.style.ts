@@ -12,6 +12,8 @@ export const entireHeaderStyle = css({
   alignItems: "center",
 
   backgroundColor: theme.colors.bgGreen,
+
+  zIndex: 1,
 });
 
 export const headerStyle = css({

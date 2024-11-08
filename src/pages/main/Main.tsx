@@ -8,23 +8,23 @@ import Header from "./components/Header/Header";
 import ProductCard from "./components/ProductCard/ProductCard";
 import { PRODUCTS } from "./constants/products";
 
-type Routine = "스킨" | "에센스" | "로션";
+const categories = ["스킨", "에센스", "로션"];
 
 const Main = () => {
-  const [category, setCategory] = useState<Routine>("스킨");
+  const [category, setCategory] = useState<number>(0);
 
-  const categories = ["스킨", "에센스", "로션"];
+  const filteredItems = PRODUCTS.filter((item) => item.category === category);
 
   return (
     <div css={pageStyle}>
       <Header />
       <div css={categoryLayoutStyle}>
-        {categories.map((categoryName) => (
+        {categories.map((categoryName, index) => (
           <Button
             key={categoryName}
             variant="secondary"
-            onClick={() => setCategory(categoryName as Routine)}
-            css={buttonStyle(categoryName === category)}
+            onClick={() => setCategory(index)}
+            css={buttonStyle(index === category)}
           >
             {categoryName}
           </Button>
@@ -32,11 +32,13 @@ const Main = () => {
       </div>
 
       <div css={productLayout}>
-        {PRODUCTS.map((product) => (
+        {filteredItems.map((product) => (
           <ProductCard
-            productImage={product.productImage}
-            productLink={product.productLink}
-            productName={product.productName}
+            key={product.productName}
+            image={product.productImage}
+            link={product.productLink}
+            name={product.productName}
+            category={product.category}
           />
         ))}
       </div>

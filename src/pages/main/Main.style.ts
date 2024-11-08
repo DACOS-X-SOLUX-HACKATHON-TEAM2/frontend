@@ -14,7 +14,10 @@ export const productLayout = css({
   gridTemplateColumns: "1fr 1fr 1fr 1fr",
   justifyContent: "center",
 
+  height: "100dvh",
+
   padding: "2rem",
+  marginTop: "5rem",
 
   gap: "3rem",
 
@@ -23,8 +26,9 @@ export const productLayout = css({
 
 export const categoryLayoutStyle = css({
   display: "flex",
+  position: "fixed",
 
-  top: "20rem",
+  top: "22em",
 
   width: "100%",
   padding: "1rem 15rem",
@@ -33,6 +37,8 @@ export const categoryLayoutStyle = css({
   alignItems: "center",
 
   marginBottom: "2rem",
+
+  zIndex: 1,
 
   backgroundColor: theme.colors.bgGreen,
 });
