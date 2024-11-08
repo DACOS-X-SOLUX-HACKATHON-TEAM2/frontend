@@ -24,8 +24,8 @@ const Q2: React.FC = () => {
   };
 
   const topics = [
-    { num: "1", path: "/Q3", name: "남자" },
-    { num: "2", path: "/Q3", name: "여자" },
+    { num: "0", path: "/Q3", name: "남자" },
+    { num: "1", path: "/Q3", name: "여자" },
   ];
 
   return (
