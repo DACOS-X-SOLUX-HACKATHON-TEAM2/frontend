@@ -1,15 +1,15 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import theme from "../../styles/theme";
 import Button from "../../components/Button/Button";
 import LikeProductCard from "../../components/LikeProductCard/LikeProductCard";
+import theme from "../../styles/theme";
 
 import {
-  pageContainer,
-  headerStyle,
-  buttonWrapper,
   bodyStyle,
+  buttonWrapper,
+  headerStyle,
+  pageContainer,
 } from "./MyPage.style";
 
 const MyPage = () => {
@@ -47,7 +47,7 @@ const MyPage = () => {
   return (
     <div css={pageContainer}>
       <header css={headerStyle}>
-        <h1 css={theme.fonts.subtitle3}>좋아요 목록</h1>
+        <h1 css={{ ...theme.fonts.subtitle2 }}>좋아요 목록</h1>
         <div css={buttonWrapper}>
           <Button variant="secondary" onClick={handleMainClick}>
             메인화면

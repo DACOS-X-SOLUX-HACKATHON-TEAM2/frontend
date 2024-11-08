@@ -1,6 +1,6 @@
+import { theme } from "./../../styles/theme";
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import theme from "../../styles/theme";
 
 export const pageContainer = css`
   background-color: ${theme.colors.bgGreen};
@@ -11,19 +11,22 @@ export const pageContainer = css`
 `;
 
 export const headerStyle = css`
+  position: fixed;
   display: flex;
+  top: 0;
   justify-content: center;
+  align-items: center;
   width: 100%;
-  position: relative;
-  padding: 1rem 2rem;
-  margin-top: 10px;
-  margin-bottom: 40px;
+  padding: 1.5rem 2rem;
+  background-color: ${theme.colors.middleGreen};
+  z-index: 10;
+  height: 7rem;
 `;
 
 export const buttonWrapper = css`
-  position: absolute;
-  right: 2rem;
   display: flex;
+  right: 2rem;
+  margin-left: auto;
   gap: 1rem;
 `;
 
@@ -32,9 +35,8 @@ export const bodyStyle = css`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 8rem;
   gap: 1rem;
-  width: 100%;
   max-width: 1063px;
   padding-bottom: 50px;
 `;

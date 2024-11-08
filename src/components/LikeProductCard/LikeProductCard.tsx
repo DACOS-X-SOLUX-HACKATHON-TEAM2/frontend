@@ -1,13 +1,13 @@
 /** @jsxImportSource @emotion/react */
 
 import {
+  buttonStyle,
   cardStyle,
-  imageWrapper,
+  heartButtonStyle,
   imageStyle,
+  imageWrapper,
   textWrapper,
   titleStyle,
-  subtitleStyle,
-  heartButtonStyle,
 } from "./LikeProductCard.style";
 
 interface ProductCardProps {
@@ -32,9 +32,9 @@ const LikeProductCard = ({
       </div>
       <div css={textWrapper}>
         <h3 css={titleStyle}>{productName}</h3>
-        <h4 css={subtitleStyle} onClick={handleLink}>
+        <button css={buttonStyle} onClick={handleLink}>
           올리브영에서 확인하기 &gt;
-        </h4>
+        </button>
       </div>
       <button css={heartButtonStyle}>♥</button>
     </article>
