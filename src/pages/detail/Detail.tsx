@@ -3,8 +3,8 @@
 import { faHeart as faRegularHeart } from "@fortawesome/free-regular-svg-icons";
 import { faHeart as faSolidHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Dispatch, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useLocation, useParams } from "react-router-dom";
 import {
   buttonStyle,
   imageStyle,
@@ -18,17 +18,12 @@ import {
   pageStyle,
   productNameStyle,
 } from "./Detail.style";
-
-interface DetailProps {
-  isLike: boolean;
-  setIsLike: Dispatch<React.SetStateAction<boolean>>;
-  id: number;
-  userId: number;
-}
+import { getDetail } from "./apis/getDetail";
 
 const Detail = () => {
   const { state } = useLocation();
   const { product, isLike } = state;
+  const { cosmeticsId } = useParams();
 
   const [liked, setLiked] = useState(isLike);
 
@@ -37,6 +32,19 @@ const Detail = () => {
     setLiked((prev) => !prev);
     postLike(product.id);
   };
+
+  useEffect(() => {
+    const fetchProductDetail = async () => {
+      try {
+        const data = await getDetail(+cosmeticsId!);
+        return data;
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchProductDetail();
+  }, [cosmeticsId]);
 
   return (
     <div css={pageStyle}>

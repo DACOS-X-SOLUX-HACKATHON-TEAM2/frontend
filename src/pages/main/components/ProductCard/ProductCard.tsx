@@ -45,13 +45,13 @@ const ProductCard = ({
 
   const handleProductCard = (e: React.MouseEvent) => {
     e.stopPropagation();
-    navigate("/detail", {
+    navigate(`/detail/${id}`, {
       state: { product: { id, image, name, link, description }, isLike },
     });
   };
 
   return (
-    <article css={cardStyle} onClick={handleProductCard}>
+    <article css={cardStyle} onClick={(e) => handleProductCard(e)}>
       <img src={image} css={imagestyle} />
       <div css={{ display: "flex", gap: "1rem" }}>
         <h3 css={titleStyle}>{name}</h3>

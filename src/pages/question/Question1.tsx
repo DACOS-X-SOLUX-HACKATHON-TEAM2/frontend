@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { axiosInstance } from "../../apis/axios";
 import {
   q,
@@ -12,10 +12,11 @@ import {
 
 const Q1: React.FC = () => {
   const navigate = useNavigate();
+  const user_id = useParams();
 
   const handleTopicClick = async (topic: { num: string; path: string }) => {
     try {
-      await axiosInstance.post("/survey", {
+      await axiosInstance.post(`/survey/${user_id}/1`, {
         surveyAnswer: topic.num,
       });
 

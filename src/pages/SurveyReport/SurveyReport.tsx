@@ -1,13 +1,11 @@
 /** @jsxImportSource @emotion/react */
-
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../../components/Button/Button";
 import ReportBox from "./components/ReportBox/ReportBox";
 import ReportModal from "./components/ReportModal/ReportModal";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import theme from "../../styles/theme";
-import { TYPE } from "./constants/report";
 import {
   pageStyle,
   reportSectionStyle,
@@ -15,16 +13,30 @@ import {
   textLayoutStyle,
   titleStyle,
 } from "./SurveyReport.style";
-import { getSkinType } from "./utils/type";
+import { putType } from "./apis/putType";
 
 type Modal = "feature" | "care";
 
 const SurveyReport = () => {
-  const type = getSkinType(TYPE.type);
-
+  const [skinType, setSkinType] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalType, setModalType] = useState<Modal>("feature");
+
   const navigate = useNavigate();
+  const { userId } = useParams<{ userId: string }>();
+
+  useEffect(() => {
+    const fetchSkinType = async () => {
+      try {
+        const data = await putType(+userId!);
+        setSkinType(data?.skinType);
+      } catch (error) {
+        console.error("Failed to fetch skin type", error);
+      }
+    };
+
+    fetchSkinType();
+  }, []);
 
   const handleOpenModal = (type: Modal) => {
     setModalType(type);
@@ -40,15 +52,15 @@ const SurveyReport = () => {
       <main css={pageStyle}>
         <div css={textLayoutStyle}>
           <h1 css={titleStyle}>피부 상태 진단 결과</h1>
-          <h2 css={reportStyle}>당신의 피부 타입은 {type}입니다.</h2>
+          <h2 css={reportStyle}>당신의 피부 타입은 {skinType}입니다.</h2>
         </div>
         <section css={reportSectionStyle}>
           <ReportBox
-            title={`${type} 피부 특징`}
+            title={`${skinType} 피부 특징`}
             onClick={() => handleOpenModal("feature")}
           />
           <ReportBox
-            title={`${type} 피부 관리 방법`}
+            title={`${skinType} 피부 관리 방법`}
             onClick={() => handleOpenModal("care")}
           />
         </section>
@@ -65,7 +77,7 @@ const SurveyReport = () => {
       {isModalOpen && modalType && (
         <ReportModal
           modalType={modalType}
-          skinType={TYPE.type}
+          skinType={skinType}
           onClose={handleCloseModal}
         />
       )}
