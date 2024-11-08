@@ -3,7 +3,7 @@ import theme from "../../styles/theme";
 
 export const pageStyle = css({
   width: "100vw",
-  height: "100dh",
+  height: "100dvh",
 
   backgroundColor: theme.colors.bgGreen,
 });
@@ -16,9 +16,7 @@ export const productLayout = css({
 
   height: "100dvh",
 
-  padding: "2rem",
-  marginTop: "5rem",
-
+  padding: "3rem 5rem",
   gap: "3rem",
 
   overflowY: "scroll",
@@ -28,7 +26,7 @@ export const categoryLayoutStyle = css({
   display: "flex",
   position: "fixed",
 
-  top: "22em",
+  top: "25em",
 
   width: "100%",
   padding: "1rem 15rem",
