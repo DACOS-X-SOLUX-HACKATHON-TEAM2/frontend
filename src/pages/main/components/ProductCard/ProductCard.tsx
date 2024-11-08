@@ -4,7 +4,7 @@ import { faHeart as faRegularHeart } from "@fortawesome/free-regular-svg-icons";
 import { faHeart as faSolidHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Button from "../../../../components/Button/Button";
 import theme from "../../../../styles/theme";
 import { postLike } from "../../apis/postLike";
@@ -31,7 +31,6 @@ const ProductCard = ({
   description,
 }: ProductCardProps) => {
   const [isLike, setIsLike] = useState(false);
-  const userId = useParams();
   const navigate = useNavigate();
 
   const handleLink = () => {
@@ -46,11 +45,13 @@ const ProductCard = ({
 
   const handleProductCard = (e: React.MouseEvent) => {
     e.stopPropagation();
-    navigate("/detail", { state: isLike });
+    navigate("/detail", {
+      state: { product: { id, image, name, link, description }, isLike },
+    });
   };
 
   return (
-    <article css={cardStyle} onClick={(e) => handleProductCard(e)}>
+    <article css={cardStyle} onClick={handleProductCard}>
       <img src={image} css={imagestyle} />
       <div css={{ display: "flex", gap: "1rem" }}>
         <h3 css={titleStyle}>{name}</h3>

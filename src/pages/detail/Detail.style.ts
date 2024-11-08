@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import theme from "../../styles/theme";
+import { theme } from "./../../styles/theme";
 
 export const pageStyle = css({
   display: "flex",
@@ -49,4 +49,8 @@ export const imageStyle = css({
 
 export const productNameStyle = css({
   ...theme.fonts.subtitle2,
+});
+
+export const descriptionStyle = css({
+  maxWidth: "24rem",
 });
