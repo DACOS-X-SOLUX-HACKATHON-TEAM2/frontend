@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import theme from "../../styles/theme";
+import theme from "../../../../styles/theme";
 
 export const cardStyle = css({
   display: "flex",
@@ -18,6 +18,14 @@ export const cardStyle = css({
   borderRadius: "0.8rem",
 
   backgroundColor: theme.colors.lightGreen,
+
+  cursor: "pointer",
+
+  "&:hover": {
+    transform: "translateY(-10px)",
+
+    transition: "0.3s ease-in-out",
+  },
 
   "& h3": {
     alignSelf: "baseline",

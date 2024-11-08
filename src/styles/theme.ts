@@ -10,6 +10,7 @@ export const theme = {
     gray: "#525866",
     lightGray: "#F8F8FB",
     white: "#FFF",
+    red: "#FF0000",
   },
   fonts: {
     title1: css`
